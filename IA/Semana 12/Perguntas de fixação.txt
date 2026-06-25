@@ -1,0 +1,34 @@
+Perguntas de fixação
+
+1. O que é latência?
+Resposta: Tempo que o usuário espera pela resposta da aplicação.
+
+2. O que é throughput?
+Resposta: Quantidade de respostas que a aplicação entrega em determinado tempo.
+
+3. Para que serve o ONNX?
+Resposta: Tornar modelos de IA portáveis entre diferentes ferramentas.
+
+4. Por que TensorRT é associado a GPU NVIDIA?
+Resposta: Porque otimiza modelos para hardware NVIDIA.
+
+5. O que é um contêiner?
+Resposta: Pacote com a aplicação e suas dependências.
+
+6. O que é um Pod?
+Resposta: Uma instância da aplicação em execução no Kubernetes.
+
+7. O que o Deployment faz?
+Resposta: Mantém a aplicação rodando conforme a configuração definida.
+
+8. O que o Service faz?
+Resposta: Cria um endereço estável para acessar a aplicação.
+
+9. O que o HPA faz?
+Resposta: Ajusta automaticamente a quantidade de réplicas.
+
+10. Por que o Metrics Server é necessário?
+Resposta: Fornece métricas para o HPA tomar decisões.
+
+
+https://github.com/Rkz531/Semana-12-IA

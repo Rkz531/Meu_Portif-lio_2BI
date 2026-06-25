@@ -1,0 +1,29 @@
+
+Critério	Fine-tuning completo	Modelo pronto + prompts	Embeddings customizados
+Tempo necessário	1 semana	Algumas horas	2 a 3 dias
+Custo estimado	R$ 3.000	Baixo custo	Médio
+Qualidade esperada	Alta	Média/Alta	Alta
+Flexibilidade	Alta	Média	Alta
+Risco técnico	Médio	Baixo	Médio
+Qual abordagem atende melhor o prazo de duas semanas?
+A melhor escolha para a equipe é a proposta do Desenvolvedor B, usar um modelo já fine-tunado da comunidade e ajustar os prompts.
+
+Qual cabe no orçamento de R$ 5.000?
+Todas cabem, mas modelo pronto + prompts é a mais barata.
+
+Qual tem menor risco de falhar?
+Modelo pronto + prompts.
+
+
+No class prompt, a IA manteve a bola genérica e simples.
+
+No instance prompt, a IA adicionou detalhes específicos da Jabulani.
+
+Imagem gerada: Experimentos com IA generativa e futebolImagem gerada: Experimentos com IA generativa e 
+Três perguntas de consolidação
+Foram necessárias 2 tentativas.
+
+A cooperação ajudou com ideias e melhorias nos prompts.
+
+Prompt weighting serve para dar mais importância a elementos.
+Negative prompt serve para remover elementos indesejados.

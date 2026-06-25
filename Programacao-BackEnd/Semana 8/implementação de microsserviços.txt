@@ -1,0 +1,6 @@
+Como a implementação de microsserviços mudou a maneira como você pensou sobre a divisão do código? os microsserviços tem uma arquitetura com facil aplicação, possuindo varias características para facilitar o entendimento do código   
+
+Quais desafios surgiram ao tentar refatorar o sistema para microsserviços?
+A comunicação entre os servidores, a inconsistência dos dados e o sistema um pouco mais complexo 
+
+Como os padrões de design ajudaram a estruturar melhor o código em ambas as arquiteturas? grupando dados e funções em classes para evitar bagunça e facilitar a leitura. Isso permitiu que cada parte do sistema tivesse seu espaço definido, mesmo estando no mesmo bloco de código.

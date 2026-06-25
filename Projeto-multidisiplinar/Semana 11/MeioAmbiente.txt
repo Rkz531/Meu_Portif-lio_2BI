@@ -1,0 +1,13 @@
+1. Como o desenvolvimento do site pode impactar o meio ambiente em relação ao consumo de energia, armazenamento de dados e uso de servidores? Que práticas sustentáveis poderiam ser adotadas para reduzir esses impactos?
+R:O site consome energia em servidores e armazenamento de dados. Para reduzir impactos, pode-se otimizar imagens, usar códigos leves e servidores eficientes.
+
+2. O projeto do site pode gerar algum tipo de poluição digital, como desperdício de recursos computacionais, excesso de armazenamento ou alto consumo de internet? Como esses problemas poderiam ser minimizados?
+R:Sim, arquivos pesados e dados desnecessários geram poluição digital. Isso pode ser reduzido com compressão de arquivos e limpeza do banco de dados, além do descarte incorreto de lixo eletrônico que pode gerar poluição ambiental
+
+3. De que forma a comunidade ou os usuários podem participar do desenvolvimento e da melhoria do site? Como essa colaboração pode aumentar a utilidade, acessibilidade e aceitação do projeto?
+R:Os usuários podem ajudar com feedbacks, testes e sugestões. Melhorando a utilidade, acessibilidade e aceitação do site.
+
+Perguntas do Slide
+1- As tendências de mercado podem ajudar no sucesso do projeto porque mostram que cada vez mais serviços estão sendo digitalizados. Com isso, o SIGACRC se torna mais útil, pois ajuda a organizar processos, reduzir erros e melhorar o atendimento no cartório.
+
+2- Sim, existe impacto no meio ambiente. O uso do sistema pode aumentar o consumo de energia e armazenamento em servidores, mas também pode reduzir o uso de papel, impressões e documentos físicos. Para diminuir os impactos negativos, o projeto deve ter páginas leves, dados bem organizados e evitar armazenar informações desnecessár

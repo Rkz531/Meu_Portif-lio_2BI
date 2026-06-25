@@ -1,0 +1,7 @@
+O Cypress abriu a aplicação automaticamente, verificou se os elementos apareciam corretamente na tela, clicou nos botões e conferiu se o carrinho estava funcionando como esperado.
+
+O teste mais fácil de entender foi o que verificava se a página inicial abria corretamente, porque ele apenas acessava o localhost e procurava o texto “Lista de Produtos”.
+
+Nenhum teste falhou. Todos os testes passaram corretamente durante a execução.
+
+Os testes automatizados ajudam no desenvolvimento de sistemas porque permitem verificar rapidamente se o sistema está funcionando corretamente, ajudam a encontrar erros mais cedo e evitam problemas após alterações no código.

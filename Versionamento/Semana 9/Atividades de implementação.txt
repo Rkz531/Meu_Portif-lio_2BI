@@ -1,0 +1,83 @@
+	
+3. Atividade A - Complete as frases 
+
+Use as palavras do quadro para completar as frases. 
+
+GitHub Actions | Docker | Kubernetes | Secrets | Rollback | Canary Release | Blue-Green Deployment 
+
+1.  GitHub Actions serve para automatizar tarefas dentro do GitHub. 
+
+2. Docker serve para empacotar uma aplicação com suas dependências. 
+
+3. Secrets protege senhas, tokens e chaves de acesso. 
+
+4. Rollback é usado para voltar para uma versão anterior do sistema. 
+
+5. Canary Release libera a nova versão para poucos usuários primeiro. 
+
+6. Blue-Green Deployment usa dois ambientes, um com a versão antiga e outro com a nova. 
+
+7. Kubernetes ajuda a gerenciar vários containers em execução. 
+
+4. Atividade B - Ligue os conceitos Blue-Green Deployment 
+
+Termo 
+
+Função 
+
+1. GitHub Actions 
+
+(5 ) Voltar para uma versão anterior 
+
+2. Docker 
+
+(4 ) Guardar senhas e tokens com segurança 
+
+3. Kubernetes 
+
+(1) Automatizar tarefas no GitHub 
+
+4. Secrets 
+
+(2) Empacotar a aplicação com suas dependências 
+
+5. Rollback 
+
+(6) Liberar a nova versão para poucos usuários primeiro 
+
+6. Canary Release 
+
+( 7) Usar dois ambientes, um antigo e um novo 
+
+7. Blue-Green Deployment 
+
+( 3) Gerenciar vários containers 
+
+5. Atividade C - Verdadeiro ou falso 
+
+(V) GitHub Actions pode executar tarefas automaticamente quando o código é enviado ao GitHub. 
+
+( F ) Docker serve para guardar senhas de banco de dados. 
+
+( V ) Kubernetes ajuda a controlar containers em execução. 
+
+( F) Secrets devem ser escritos diretamente no código-fonte. 
+
+( V) Rollback é usado quando precisamos voltar para uma versão anterior. 
+
+( V) Canary Release libera uma nova versão primeiro para um grupo pequeno de usuários. 
+
+( V  ) Blue-Green Deployment trabalha com dois ambientes para facilitar a troca de versão. 
+
+
+ 
+6. Atividade D - Responda com suas palavras
+1. Para que serve o GitHub Actions?
+GitHub Actions serve para automatizar tarefas no GitHub, como testes, builds e deploys, sem precisar fazer tudo manualmente.
+
+2. Por que não devemos colocar senhas diretamente no código?
+Porque outras pessoas podem acessar essas senhas, causando problemas de segurança e vazamento de dados.
+3. O que significa fazer rollback?
+Rollback significa voltar o sistema para uma versão anterior quando a nova versão apresenta erros ou problemas.
+4. Por que o Docker pode ajudar na entrega de software?
+Porque o Docker empacota a aplicação com todas as dependências, fazendo ela funcionar da mesma forma em diferentes ambientes.

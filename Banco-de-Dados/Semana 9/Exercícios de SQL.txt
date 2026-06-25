@@ -1,0 +1,267 @@
+Exercícios de SQL
+
+Somente enunciados — Cláusulas SELECT Avançadas
+
+Nome: ________________________________    Turma: ________    Data: ____/____/______
+
+ 
+
+Orientações gerais
+·       Leia cada questão com atenção antes de responder.
+
+·       Quando houver código SQL, observe o nome das tabelas e das colunas.
+
+·       Nas questões práticas, escreva a consulta SQL solicitada.
+
+·       Responda com suas próprias palavras quando a questão pedir explicação.
+
+1. Operadores de conjunto: UNION, UNION ALL, INTERSECT e EXCEPT
+Considere as duas tabelas a seguir para responder às questões desta seção:
+
+clientes_online
+
+clientes_fisicos
+
+Ana
+
+Carlos
+
+Carlos
+
+Bia
+
+Bia
+
+Denis
+
+ 
+
+1.     Explique com suas palavras qual é a função do operador UNION.
+
+Une as informações selecionadas exceto as repitidas
+
+2.     Qual é a diferença entre UNION e UNION ALL?
+
+UNION ALL une as informações selecionadas incluindo as repetidas enquanto o UNION não mostra as repetidas
+
+3. Qual operador deve ser usado para encontrar registros que aparecem nas duas consultas?
+
+a) UNION
+b) UNION ALL
+(X) INTERSECT
+d) EXCEPT
+
+4. Observe a consulta abaixo e escreva qual será o resultado.
+
+SELECT nome FROM clientes_online
+EXCEPT
+SELECT nome FROM clientes_fisicos;
+
+ 
+
+Resposta é Ana
+
+5. Escreva uma consulta para listar todos os clientes das duas tabelas, sem repetir nomes.
+
+Resposta:
+
+SELECT nome FROM clientes_online
+UNION
+SELECT nome FROM clientes_fisicos;
+
+ 
+
+2. Cláusula HAVING
+Considere uma tabela chamada Entregas com as colunas: id_entrega, cidade e peso_entrega.
+
+1. Complete: A cláusula WHERE é usada para filtrar Informações antes do agrupamento.
+
+2. Complete: A cláusula HAVING é usada para filtrar Informações depois do GROUP BY.
+
+3. Marque a consulta correta para mostrar cidades com peso total de entregas maior que 20.
+
+a)
+
+SELECT cidade, SUM(peso_entrega)
+FROM Entregas
+WHERE SUM(peso_entrega) > 20
+GROUP BY cidade;
+
+(X)
+
+SELECT cidade, SUM(peso_entrega)
+FROM Entregas
+GROUP BY cidade
+HAVING SUM(peso_entrega) > 20;
+
+3.     Escreva uma consulta para mostrar o total de entregas por cidade.
+
+Resposta:
+
+SELECT cidade, COUNT(*)
+
+FROM Entregas
+
+GROUP BY cidade;
+
+4.     Agora adapte a consulta anterior para mostrar apenas cidades com mais de 2 entregas.
+
+Respossta:
+
+SELECT cidade, COUNT(*)
+
+FROM Entregas
+
+GROUP BY cidade
+
+HAVING COUNT(*) > 2;.
+
+3. Consultas complexas com JOIN e subconsultas
+Considere as tabelas Clientes e Pedidos:
+
+Clientes
+
+Pedidos
+
+id_cliente | nome
+1 | Ana
+2 | Carlos
+
+id_pedido | id_cliente | valor_total
+1 | 1 | 300
+2 | 2 | 700
+
+ 
+
+1. O que é um JOIN?
+
+a) Um comando para apagar tabelas.
+(X) Um comando para juntar dados de tabelas relacionadas.
+c) Um comando usado apenas para criar banco de dados.
+d) Um comando para renomear colunas.
+
+2. De acordo com as tabelas apresentadas, qual cliente fez o pedido de R$ 700?
+
+Resposta: Carlos
+
+3. Complete o JOIN abaixo:
+
+SELECT Clientes.nome, Pedidos.valor_total
+FROM Clientes
+JOIN Pedidos
+ON Clientes.id_cliente = Pedidos,id_clientes
+
+5.     Explique com suas palavras o que é uma subconsulta.
+
+È uma consulta dentro da outra
+
+6.     Crie uma consulta para mostrar clientes que fizeram pedidos acima de R$ 500.
+
+Resposta:
+
+SELECT nome
+
+FROM Clientes
+
+WHERE id_cliente IN (
+
+    SELECT id_cliente
+
+    FROM Pedidos
+
+    WHERE valor_total > 500
+
+);
+
+4. Escrita de consultas eficientes
+Responda às questões considerando boas práticas de escrita de consultas SQL.
+
+1.     Por que devemos evitar SELECT * em consultas grandes?
+
+Para não ter dados desnecessários
+
+2. Qual consulta é mais eficiente? Explique sua resposta.
+
+a)
+
+SELECT * FROM Clientes;
+
+(X)
+
+SELECT nome, email FROM Clientes;
+
+3. Para que serve um índice em uma tabela?
+
+a) Para deixar a tabela colorida.
+(X) Para ajudar o banco a localizar dados mais rapidamente.
+c) Para apagar registros duplicados.
+d) Para impedir consultas.
+
+4. Crie um índice para a coluna email da tabela Clientes.
+
+Reposta:
+
+CREATE INDEX idx_email
+
+ON Clientes(email);
+
+5. Para que serve o comando EXPLAIN?
+
+Serve para mostrar como o banco executa uma consulta
+
+5. Atividade prática introdutória
+Crie as tabelas abaixo e execute as consultas solicitadas.
+
+CREATE TABLE clientes_online (
+    id_cliente INT,
+    nome VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE clientes_fisicos (
+    id_cliente INT,
+    nome VARCHAR(100),
+    email VARCHAR(100)
+);
+
+INSERT INTO clientes_online VALUES
+(1, 'Ana', 'ana@email.com'),
+(2, 'Carlos', 'carlos@email.com'),
+(3, 'Bia', 'bia@email.com');
+
+INSERT INTO clientes_fisicos VALUES
+(2, 'Carlos', 'carlos@email.com'),
+(3, 'Bia', 'bia@email.com'),
+(4, 'Denis', 'denis@email.com');
+
+1.     Liste todos os clientes sem repetir.
+
+SELECT nome FROM clientes_online
+
+UNION
+
+SELECT nome FROM clientes_fisicos;
+
+2.     Liste todos os clientes mantendo possíveis repetições.
+
+SELECT nome FROM clientes_online
+
+UNION ALL
+
+SELECT nome FROM clientes_fisicos;
+
+3.     Liste os clientes que aparecem nas duas tabelas.
+
+SELECT nome FROM clientes_online
+
+INTERSECT
+
+SELECT nome FROM clientes_fisicos;
+
+4.     Liste os clientes que compraram online, mas não compraram na loja física.
+
+SELECT nome FROM clientes_online
+
+EXCEPT
+
+SELECT nome FROM clientes_fisicos;

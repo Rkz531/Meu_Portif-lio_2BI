@@ -1,0 +1,58 @@
+Fechamento da Aula 1
+O que significa importar dados?
+Resposta: Inserir dados de um arquivo externo no banco de dados.
+
+Por que usamos IGNORE 1 LINES?
+Resposta: Para ignorar o cabeçalho do arquivo CSV.
+
+Para que serve FIELDS TERMINATED BY ','?
+Resposta: Define que os campos são separados por vírgula.
+
+Qual foi a maior dificuldade ate aqui?
+Resposta: Configurar o caminho correto do arquivo CSV.
+
+Os produtos apareceram corretamente?
+Sim
+
+Quais produtos apareceram?
+Os produtos com estoque menor que 25.
+
+Qual e o produto mais caro?
+O produto com maior valor na coluna preço.
+
+O arquivo produtos_exportados.csv foi criado?
+Sim
+
+Exemplo de XML gerado:
+
+ 
+<produto><nome>Mouse Gamer</nome><preco>150.00</preco><estoque>20</estoque></produto>
+ 
+Quiz de fixacao
+Qual comando no MySQL e utilizado para importar dados em massa a partir de um arquivo CSV?
+Resposta: A) LOAD DATA INFILE
+Qual e a funcao do comando FIELDS TERMINATED BY no MySQL?
+Resposta: D) Determinar como os campos de um arquivo de dados sao separados.
+Qual comando voce usaria no MySQL para exportar dados no formato CSV?
+Resposta: C) SELECT INTO OUTFILE
+Respostas curtas finais
+O que e importar?
+Trazer dados externos para o banco.
+
+O que e exportar?
+Salvar dados do banco em um arquivo externo.
+
+Para que serve LOAD DATA INFILE?
+Importar arquivos CSV para o MySQL.
+
+Para que serve FIELDS TERMINATED BY?
+Definir o separador dos campos.
+
+Para que serve SELECT INTO OUTFILE?
+Exportar dados do banco para um arquivo.
+
+Qual foi a maior dificuldade encontrada na pratica?
+Encontrar a pasta correta permitida pelo MySQL.
+
+
+OBS: O MySQL Compiler não tem suporte para importar e exportar dados.

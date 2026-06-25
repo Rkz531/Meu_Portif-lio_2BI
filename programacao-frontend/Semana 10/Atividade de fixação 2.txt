@@ -1,0 +1,57 @@
+11. Atividade de fixação 2 - Identificando actions
+Observe o código abaixo:
+dispatch({
+type: 'ADD_TO_CART',
+payload: {
+name: 'Headset',
+price: 180
+}
+});
+Responda:
+6. Qual é o nome da action?
+R: ADD TO CART
+
+7. Qual produto está sendo enviado?
+Headset
+
+8. Qual é o preço do produto?
+180
+
+9. O que essa action provavelmente faz?
+Ela adiciona os produtos no carrinho
+
+12. Atividade de fixação 3 - Prevendo o estado
+Estado inicial:
+{
+cart: []
+}
+
+Aula - Redux DevTools, redux-logger e monitoramento de estado
+
+Action disparada:
+{
+type: 'ADD_TO_CART',
+payload: {
+name: 'Mouse Gamer',
+price: 120
+}
+}
+Pergunta: como ficará o estado depois dessa action?
+{
+cart: [
+{
+name: 'Mouse Gamer',
+price: 120
+}
+]
+}
+
+13. Atividade de fixação 4 - Encontrando o erro
+Observe o código abaixo:
+case 'ADD_TO_CART':
+return {
+...state,
+cart: action.payload
+};
+Pergunta: qual é o problema?
+Esse código substitui o carrinho inteiro pelo produto novo.

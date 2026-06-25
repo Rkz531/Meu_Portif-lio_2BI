@@ -1,0 +1,49 @@
+Pergunta inicial para discussão:
+O que aconteceria em uma loja se o sistema registrasse a venda, mas não diminuísse o estoque do produto?
+
+R: A loja mostraria produtos disponíveis mesmo sem ter mais no estoque, causando vendas incorretas e desorganização no sistema.
+
+Tarefa 1 — Venda confirmada
+SELECT * FROM Produtos WHERE nome_produto = 'Mouse';
+
+START TRANSACTION;
+
+INSERT INTO Vendas (id_cliente, id_produto, data_venda)
+VALUES (1, 2, '2024-09-05');
+
+UPDATE Produtos
+SET estoque = estoque - 1
+WHERE id_produto = 2;
+
+COMMIT;
+
+SELECT * FROM Vendas;
+SELECT * FROM Produtos WHERE id_produto = 2;
+
+Tarefa 2 — Venda cancelada
+START TRANSACTION;
+
+INSERT INTO Vendas (id_cliente, id_produto, data_venda)
+VALUES (3, 3, '2024-09-00');
+
+Tarefa 3 — Segurança no estoque
+START TRANSACTION;
+
+INSERT INTO Vendas (id_cliente, id_produto, data_venda)
+VALUES (2, 4, '2024-09-05');
+
+UPDATE Produtos
+SET estoque = estoque - 1
+WHERE id_produto = 4 AND estoque > 0;
+
+COMMIT;
+
+ROLLBACK;
+
+SELECT * FROM Vendas;
+
+10. Questões rápidas de fixação
+c) START TRANSACTION
+a) COMMIT
+c) ROLLBACK
+c) REPEATABLE READ

@@ -1,0 +1,318 @@
+CREATE TABLE Cliente (
+    id_cliente INTEGER PRIMARY KEY,
+    nome VARCHAR(100),
+    telefone VARCHAR(20),
+    email VARCHAR(100)
+);
+
+CREATE TABLE Animal (
+    id_animal INTEGER PRIMARY KEY,
+    nome VARCHAR(100),
+    especie VARCHAR(50),
+    idade INTEGER,
+    id_cliente INTEGER,
+    FOREIGN KEY (id_cliente)
+    REFERENCES Cliente(id_cliente)
+);
+
+CREATE TABLE Consulta (
+    id_consulta INTEGER PRIMARY KEY,
+    data_consulta DATE,
+    diagnostico VARCHAR(200),
+    id_animal INTEGER,
+    FOREIGN KEY (id_animal) REFERENCES Animal(id_animal)
+);
+
+CREATE TABLE Vacina (
+    id_vacina INTEGER PRIMARY KEY,
+    nome_vacina VARCHAR(100)
+);
+
+CREATE TABLE Animal_Vacina (
+    id_animal INTEGER,
+    id_vacina INTEGER,
+    PRIMARY KEY (id_animal, id_vacina),
+    FOREIGN KEY (id_animal) REFERENCES Animal(id_animal),
+    FOREIGN KEY (id_vacina) REFERENCES Vacina(id_vacina)
+);
+
+CREATE TABLE Alergia (
+    id_alergia INTEGER PRIMARY KEY,
+    descricao VARCHAR(100)
+);
+
+CREATE TABLE Animal_Alergia (
+    id_animal INTEGER,
+    id_alergia INTEGER,
+    PRIMARY KEY (id_animal, id_alergia),
+    FOREIGN KEY (id_animal) REFERENCES Animal(id_animal),
+    FOREIGN KEY (id_alergia) REFERENCES Alergia(id_alergia)
+);
+
+INSERT INTO Cliente VALUES
+(1, 'João Silva', '11999999999', 'joao@email.com'),
+(2, 'Maria Souza', '11888888888', 'maria@email.com');
+
+INSERT INTO Animal VALUES
+(1, 'Rex', 'Cachorro', 5, 1),
+(2, 'Remi', 'Gato', 3, 2);
+
+INSERT INTO Consulta VALUES
+(1, '2026-06-01', 'Vacinação', 1),
+(2, '2026-06-05', 'Check-up', 2),
+(3, '2026-06-10', 'Tratamento de alergia', 1);
+
+INSERT INTO Vacina VALUES
+(1, 'V10'),
+(2, 'Antirrabica'),
+(3, 'Giardia');
+
+INSERT INTO Alergia VALUES
+(1, 'Poeira'),
+(2, 'Picada de Pulga'),
+(3, 'Polen');
+
+INSERT INTO Animal_Vacina VALUES
+(1, 1),
+(1, 2),
+(2, 3);
+
+INSERT INTO Animal_Alergia VALUES
+(1, 2),
+(2, 1),
+(2, 3);
+
+SELECT * FROM Cliente;
+
+SELECT * FROM Animal;
+
+SELECT * FROM Consulta; 
+
+SELECT Animal.nome, Cliente.nome AS dono
+FROM Animal
+JOIN Cliente ON Animal.id_cliente = Cliente.id_cliente;
+
+SELECT Consulta.id_consulta,
+       Animal.nome,
+       Consulta.data_consulta,
+       Consulta.diagnostico
+FROM Consulta
+JOIN Animal ON Consulta.id_animal = Animal.id_animal;
+
+SELECT
+    c.id_cliente,
+    c.nome AS cliente,
+    c.telefone,
+    a.id_animal,
+    a.nome AS animal,
+    a.especie,
+    a.idade,
+    co.id_consulta,
+    co.data_consulta,
+    co.diagnostico
+FROM Cliente c
+JOIN Animal a ON c.id_cliente = a.id_cliente
+LEFT JOIN Consulta co ON a.id_animal = co.id_animal;
+
+SELECT
+    a.nome AS animal,
+    v.nome_vacina
+FROM Animal a
+JOIN Animal_Vacina av ON a.id_animal = av.id_animal
+JOIN Vacina v ON av.id_vacina = v.id_vacina;
+
+SELECT
+    a.nome AS animal,
+    al.descricao AS alergia
+FROM Animal a
+JOIN Animal_Alergia aa ON a.id_animal = aa.id_animal
+JOIN Alergia al ON aa.id_alergia = al.id_alergia;
+
+SELECT
+    a.nome AS animal,
+    v.nome_vacina,
+    al.descricao AS alergia
+FROM Animal a
+LEFT JOIN Animal_Vacina av ON a.id_animal = av.id_animal
+LEFT JOIN Vacina v ON av.id_vacina = v.id_vacina
+LEFT JOIN Animal_Alergia aa ON a.id_animal = aa.id_animal
+LEFT JOIN Alergia al ON aa.id_alergia = al.id_alergia;
+
+SELECT * FROM Vacina;
+
+SELECT * FROM Alergia;
+
+SELECT * FROM Animal_Vacina;
+
+SELECT * FROM Animal_Alergia;
+
+
+
+Tema escolhido:
+Clínica Veterinária
+
+Problema que o sistema resolve:
+Controlar clientes, animais, consultas, vacinas e alergias registradas na clínica veterinária.
+
+Quem usaria o sistema?
+Recepcionistas, veterinários e administradores da clínica.
+
+Quais dados precisam ser armazenados?
+Dados dos clientes (nome, telefone e e-mail), dados dos animais (nome, espécie e idade), consultas realizadas, vacinas aplicadas e alergias identificadas.
+
+Principais regras de negócio:
+
+Cada animal deve estar vinculado a um único cliente, enquanto um cliente pode possuir vários animais cadastrados. Os animais podem realizar diversas consultas ao longo do tempo, receber diferentes vacinas e possuir mais de uma alergia registrada. Todas as informações devem ser armazenadas de forma organizada, evitando duplicidade de dados e garantindo a integridade dos relacionamentos entre as tabelas.
+
+Checklist de Normalização
+
+Existe alguma lista dentro de uma célula?
+Não.
+
+Alguma informação aparece repetida em várias tabelas?
+Não.
+
+Dados do cliente aparecem dentro da tabela de pedidos?
+Não. Os dados do cliente ficam apenas na tabela Cliente e são relacionados por chave estrangeira.
+
+Cada tabela tem uma chave primária?
+Sim.
+
+Existe pelo menos uma chave estrangeira ligando tabelas?
+Sim.
+
+CREATE TABLE:
+
+CREATE TABLE Cliente (
+id_cliente INTEGER PRIMARY KEY,
+nome VARCHAR(100),
+telefone VARCHAR(20),
+email VARCHAR(100)
+);
+
+CREATE TABLE Animal (
+id_animal INTEGER PRIMARY KEY,
+nome VARCHAR(100),
+especie VARCHAR(50),
+idade INTEGER,
+id_cliente INTEGER,
+FOREIGN KEY (id_cliente)
+REFERENCES Cliente(id_cliente)
+);
+
+CREATE TABLE Consulta (
+id_consulta INTEGER PRIMARY KEY,
+data_consulta DATE,
+diagnostico VARCHAR(200),
+id_animal INTEGER,
+FOREIGN KEY (id_animal) REFERENCES Animal(id_animal)
+);
+
+CREATE TABLE Vacina (
+id_vacina INTEGER PRIMARY KEY,
+nome_vacina VARCHAR(100)
+);
+
+CREATE TABLE Animal_Vacina (
+id_animal INTEGER,
+id_vacina INTEGER,
+PRIMARY KEY (id_animal, id_vacina),
+FOREIGN KEY (id_animal) REFERENCES Animal(id_animal),
+FOREIGN KEY (id_vacina) REFERENCES Vacina(id_vacina)
+);
+
+CREATE TABLE Alergia (
+id_alergia INTEGER PRIMARY KEY,
+descricao VARCHAR(100)
+);
+
+CREATE TABLE Animal_Alergia (
+id_animal INTEGER,
+id_alergia INTEGER,
+PRIMARY KEY (id_animal, id_alergia),
+FOREIGN KEY (id_animal) REFERENCES Animal(id_animal),
+FOREIGN KEY (id_alergia) REFERENCES Alergia(id_alergia)
+);
+
+INSERT:
+
+INSERT INTO Cliente VALUES
+(1, 'João Silva', '11999999999', '[joao@email.com](mailto:joao@email.com)'),
+(2, 'Maria Souza', '11888888888', '[maria@email.com](mailto:maria@email.com)');
+
+INSERT INTO Animal VALUES
+(1, 'Rex', 'Cachorro', 5, 1),
+(2, 'Remi', 'Gato', 3, 2);
+
+INSERT INTO Consulta VALUES
+(1, '2026-06-01', 'Vacinação', 1),
+(2, '2026-06-05', 'Check-up', 2),
+(3, '2026-06-10', 'Tratamento de alergia', 1);
+
+INSERT INTO Vacina VALUES
+(1, 'V10'),
+(2, 'Antirrabica'),
+(3, 'Giardia');
+
+INSERT INTO Alergia VALUES
+(1, 'Poeira'),
+(2, 'Picada de Pulga'),
+(3, 'Polen');
+
+INSERT INTO Animal_Vacina VALUES
+(1, 1),
+(1, 2),
+(2, 3);
+
+INSERT INTO Animal_Alergia VALUES
+(1, 2),
+(2, 1),
+(2, 3);
+
+SELECT / Consultas:
+
+SELECT * FROM Cliente;
+
+SELECT * FROM Animal;
+
+SELECT * FROM Consulta;
+
+SELECT Animal.nome, Cliente.nome AS dono
+FROM Animal
+JOIN Cliente ON Animal.id_cliente = Cliente.id_cliente;
+
+SELECT Consulta.id_consulta,
+Animal.nome,
+Consulta.data_consulta,
+Consulta.diagnostico
+FROM Consulta
+JOIN Animal ON Consulta.id_animal = Animal.id_animal;
+
+SELECT
+c.id_cliente,
+c.nome AS cliente,
+c.telefone,
+a.id_animal,
+a.nome AS animal,
+a.especie,
+a.idade,
+co.id_consulta,
+co.data_consulta,
+co.diagnostico
+FROM Cliente c
+JOIN Animal a ON c.id_cliente = a.id_cliente
+LEFT JOIN Consulta co ON a.id_animal = co.id_animal;
+
+SELECT
+a.nome AS animal,
+v.nome_vacina
+FROM Animal a
+JOIN Animal_Vacina av ON a.id_animal = av.id_animal
+JOIN Vacina v ON av.id_vacina = v.id_vacina;
+
+SELECT
+a.nome AS animal,
+al.descricao AS alergia
+FROM Animal a
+JOIN Animal_Alergia aa ON a.id_animal = aa.id_animal
+JOIN Alergia al ON aa.id_alergia = al.id_alergia;

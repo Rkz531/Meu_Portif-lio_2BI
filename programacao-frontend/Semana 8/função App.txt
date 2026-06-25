@@ -1,0 +1,2 @@
+A função App é o componente central da aplicação, sendo responsável por controlar o estado das tarefas, manipular as ações do usuário e renderizar a interface. Por meio dos hooks useState e useEffect, a aplicação consegue armazenar dados, atualizar a interface em tempo real e manter as informações salvas mesmo após o recarregamento da página. Dessa forma, o sistema se torna dinâmico, interativo e funcional, permitindo ao usuário gerenciar suas tarefas de maneira simples e eficiente.
+https://github.com/Rkz531/Front-End-semana-8

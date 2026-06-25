@@ -1,0 +1,2 @@
+Quais foram os desafios enfrentados durante o esboço da codificação e os passos da sua implementação? 
+descobrir que precisava de um README

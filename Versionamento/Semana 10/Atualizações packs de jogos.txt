@@ -1,0 +1,13 @@
+https://docs.google.com/spreadsheets/d/1S2oQPFLVnqMDkAJP_zUR2HNuECh7oThSaFalamqXogY/edit?usp=sharing
+
+1.  Qual foi a mudança mais importante encontrada na atualização?
+R: A primeira, pois foi o lançamento.
+
+2.  A atualização trouxe mais novidades ou mais correções?
+R: Mais novidades por ser lançamento
+
+3.Por que as empresas publicam release notes ou patch notes?
+R: Para dizer onde e no que ele estão trabalhando/aprimorando
+
+4.Qual é a importância de controlar as versões de um software ou jogo?
+R: Saber no que já foi mexido e no que deve ser corrigido.

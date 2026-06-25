@@ -1,0 +1,15 @@
+1. d_model = 512 e 8 cabeças. Qual é a dimensão por cabeça?
+
+Para descobrir a dimensão de cada cabeça, dividimos a dimensão total pela quantidade de cabeças:
+
+512 ÷ 8 = 64
+
+Resposta: Cada cabeça possui dimensão igual a 64.
+
+2. Para produzir um manual técnico, a temperatura deve ser baixa ou alta? Por quê?
+
+Resposta: A temperatura deve ser baixa, pois isso faz o modelo escolher palavras mais prováveis e previsíveis. Dessa forma, a resposta tende a ser mais objetiva, precisa e consistente, características importantes em um manual técnico.
+
+3. Por que uma frase curta pode usar mais tokens do que parece?
+
+Resposta: Porque token não é necessariamente uma palavra inteira. Palavras raras, acentos, pontuações, abreviações e espaços podem ser separados em vários tokens. Por isso, mesmo uma frase pequena pode consumir uma quantidade relativamente grande de tokens.

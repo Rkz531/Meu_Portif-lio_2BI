@@ -1,0 +1,32 @@
+Etapa 1 – Compreensão do problema
+
+A IA precisa melhorar com o uso porque pode cometer erros e dar respostas confusas. O uso dos usuários ajuda a identificar esses problemas.
+
+Se as respostas erradas não forem corrigidas, os usuários podem receber informações incorretas e perder a confiança no sistema.
+Etapa 2 – Identificação do feedback humano
+
+Feedback humano é a opinião dos usuários sobre as respostas da IA.
+
+Algumas formas de coletar feedback são curtidas/descurtidas.
+
+Etapa 3 – Privacidade antes do envio ao modelo
+
+Dados como nome, CPF, telefone, endereço e informações de saúde devem ser protegidos.
+
+Remover é apagar o dado. Mascarar é esconder parte dele. Manter é deixar a informação visível quando necessário.
+
+Etapa 4 – Uso do feedback para melhoria do modelo
+
+RLHF é quando pessoas avaliam as respostas da IA para ajudar a melhorá-la.
+
+A IA não deve aprender com qualquer feedback sem análise porque algumas avaliações podem estar erradas.
+
+Etapa 5 – Mecanismos de controle
+
+O feedback sozinho não garante segurança porque nem todos os problemas são percebidos pelos usuários.
+
+Os filtros bloqueiam conteúdos inadequados, os logs registram eventos importantes e as auditorias verificam se tudo está funcionando corretamente.
+
+Etapa 6 – Síntese final
+
+O feedback dos usuários ajuda a melhorar a IA. Junto com filtros, logs e auditorias, ele torna o sistema mais seguro, confiável e útil para todos os usuários.
